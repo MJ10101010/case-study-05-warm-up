@@ -125,6 +125,18 @@ if Tool is not None:
 else:
     def _build_agent():
         return None
+{
+	"URL": "https://uva-sds-gpt-dgg6b.azurewebsites.net", # Your public URL
+	"appserviceplan": "dgg6b_asp_8586",
+	"location": "eastus",
+	"name": "uva-sds-gpt-dgg6b",
+	"os": "Linux",
+	"resourcegroup": "uva-sds-gpt-dgg6b-rg",
+	"runtime_version": "PYTHON|3.11",
+	"sku": "FREE",
+	"src_path": "/path/to/case-study-05-warm-up"
+}
+
 
 {
 "URL": "https://uva-sds-gpt-dgg6b.azurewebsites.net", # Your public URL
@@ -160,4 +172,4 @@ def agent_endpoint():
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", "5000"))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    app.run(host="127.0.0.1", port=port, debug=True)
