@@ -12,6 +12,10 @@ OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "tinyllama")
 def home():
     return render_template("index.html")
 
+@app.get("/api/health")
+def health():
+    return jsonify({"status": "ok"}), 200
+
 # Stage 1: echo
 @app.post("/api/echo")
 def echo():
@@ -125,31 +129,6 @@ if Tool is not None:
 else:
     def _build_agent():
         return None
-{
-	"URL": "https://uva-sds-gpt-dgg6b.azurewebsites.net", # Your public URL
-	"appserviceplan": "dgg6b_asp_8586",
-	"location": "eastus",
-	"name": "uva-sds-gpt-dgg6b",
-	"os": "Linux",
-	"resourcegroup": "uva-sds-gpt-dgg6b-rg",
-	"runtime_version": "PYTHON|3.11",
-	"sku": "FREE",
-	"src_path": "/path/to/case-study-05-warm-up"
-}
-
-
-{
-"URL": "https://uva-sds-gpt-dgg6b.azurewebsites.net", # Your public URL
-"appserviceplan": "dgg6b_asp_8586",
-"location": "eastus",
-"name": "uva-sds-gpt-dgg6b",
-"os": "Linux",
-"resourcegroup": "uva-sds-gpt-dgg6b-rg",
-"runtime_version": "PYTHON|3.11",
-"sku": "FREE",
-"src_path": "/path/to/case-study-05-warm-up"
-}
-
 
 _AGENT = None
 
